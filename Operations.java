@@ -163,6 +163,31 @@ int size;
 			}
 			System.out.println("Size of the linkedList: "+size);
 		}
+		
+		// Node sorting
+		public void sort() {
+			Node current = head, index = null;
+			int temp;
+
+			if (head == null) {
+				return;
+			} else {
+				while (current != null) {
+					index = current.next; // Node index will point to node next to current
+					while (index != null) {
+						// If current node data is greater than index node data, swap the data between
+						// them
+						if (current.data > index.data) {
+							temp = current.data;
+							current.data = index.data;
+							index.data = temp;
+						}
+						index = index.next;
+					}
+					current = current.next;
+				}
+			}
+		}
 
 	// Show method to display the linked list data
 	public void PrintList() {
