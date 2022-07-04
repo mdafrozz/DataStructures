@@ -71,6 +71,20 @@ Node tail;
 				head = temp.next;
 			}
 		}
+		
+		// Delete the last node in linkedList using pop
+		public void popLastNode() {
+			Node temp = head;
+			if (head == null) {
+				System.out.println("Linked list is empty");
+			} else {
+				while (temp.next != tail) {
+					temp = temp.next;
+				}
+				temp.next = null;
+				tail = temp;
+			}
+		}
 
 	// Show method to display the linked list data
 	public void PrintList() {
