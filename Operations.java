@@ -72,6 +72,26 @@ Node tail;
 			}
 		}
 		
+		// Search node in linked list
+		public void search(int data) {
+			Node temp = head;
+			int index = 0;
+			if (head == null) {
+				System.out.println("Linked List is empty");
+			} else {
+				while (temp != null) {
+					index++;
+					if (temp.data == data) {
+						System.out.println("Node is present at " + index + " position");
+						break;
+					} else {
+						temp = temp.next;
+					}
+				}
+			}
+
+		}
+		
 		// Delete the last node in linkedList using pop
 		public void popLastNode() {
 			Node temp = head;
