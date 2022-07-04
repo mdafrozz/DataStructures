@@ -105,6 +105,26 @@ Node tail;
 				tail = temp;
 			}
 		}
+		
+		// Method is used to insert after the node in linked list
+		public void insertAfter(int insertAfter, int insertData) {
+			Node temp = head;
+			Node insertNode = new Node(insertData);
+			if (head == null) {
+				System.out.println("Linked List is empty");
+			} else {
+				while (temp != null) {
+					if (temp.data == insertAfter) {
+						Node node = temp.next;
+						temp.next = insertNode;
+						insertNode.next = node;
+						temp = node;
+					} else {
+						temp = temp.next;
+					}
+				}
+			}
+		}
 
 	// Show method to display the linked list data
 	public void PrintList() {
