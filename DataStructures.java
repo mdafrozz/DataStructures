@@ -3,22 +3,20 @@
  */
 package java_generics;
 
-import java.util.LinkedList;
-
 /**
  * @author MD_AFROZ
  *
  */
+//create a simple Linked List of 56, 30 and 70
 public class DataStructures {
 	public static void main(String[] args) {
 		System.out.println("**************Data STructures*************");
 		
-		LinkedList<Integer> list = new LinkedList<Integer>();
-		list.add(56);
-		list.add(30);
-		list.add(76);
-		
-		System.out.println("LinkedList is : " + list);
+		Operations myLinkedList = new Operations();
+		myLinkedList.addNode(56);
+		myLinkedList.addNode(30);
+		myLinkedList.addNode(70);
+		myLinkedList.PrintList();
 
 	}
 }
