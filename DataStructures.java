@@ -18,6 +18,7 @@ public class DataStructures {
 		Operations myLinkedList3 = new Operations();
 		Operations myLinkedList4 = new Operations();
 		Operations myLinkedList5 = new Operations();
+		Operations myLinkedList6 = new Operations();
 		
 		System.out.println("<------------Add node in start----------->");
 		myLinkedList.addNode(70);
@@ -61,5 +62,14 @@ public class DataStructures {
 		myLinkedList5.insert(70);
 		myLinkedList5.PrintList();
 		myLinkedList5.search(30);
+		
+		System.out.println("<------------Insert new node----------->");
+		myLinkedList6.insert(56);
+		myLinkedList6.insert(30);
+		myLinkedList6.insert(70);
+		myLinkedList6.PrintList();
+		System.out.println("After inserting new node: ");
+		myLinkedList6.insertAfter(30, 40);
+		myLinkedList6.PrintList();
 	}
 }
