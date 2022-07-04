@@ -34,6 +34,33 @@ Node tail;
 			tail = tail.next;
 		}
 	}
+	
+	// Insert node
+		public void insert(int data) {
+			Node node = new Node(data);
+			if (head == null) {
+				head = node;
+				tail = node;
+			} else {
+				tail.next = node;
+				tail = tail.next;
+			}
+		}
+
+		// Method to insert between two nodes
+		public void insertBetweenNode(int a, int b, int c) {
+			Node newNode = new Node(c);
+			Node temp = head;
+			while (temp.next != null) {
+				if ((temp.data == a && temp.next.data == b) || (temp.data == a && temp.next.data == b)) {
+					Node afterc = temp.next;
+					temp.next = newNode;
+					temp.next.next = afterc;
+					break;
+				}
+				temp = temp.next;
+			}
+		}
 
 	// Show method to display the linked list data
 	public void PrintList() {
