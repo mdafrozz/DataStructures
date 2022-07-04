@@ -9,37 +9,40 @@ package java_generics;
  */
 public class Operations {
 Node head;
+Node tail;
 	
-	public Operations() {
-		head = null;
-	}
-	
-	public void addNode(int newVal) {
-		Node newNode = new Node();
-		newNode.data = newVal;
-		newNode.nextNode = null;
-		
-		if(head == null) {
-			head = newNode;
-		}else {
-			Node temp = new Node();
-			temp = head;
-			while (temp.nextNode != null)
-				temp = temp.nextNode;
-			temp.nextNode = newNode;
+	// Push as first node will be the last node
+	public void addNode(int data) {
+		Node node = new Node(data);
+		if (head == null) {
+			head = node;
+		} else {
+			Node temp = head;
+			head = node;
+			node.next = temp;
 		}
 	}
-	
+
+	// Push as last node will be the first node
+	public void append(int data) {
+		Node node = new Node(data);
+		if (head == null) {
+			head = node;
+			tail = node;
+		} else {
+			tail.next = node;
+			tail = tail.next;
+		}
+	}
+
+	// Show method to display the linked list data
 	public void PrintList() {
-		Node temp = new Node();
-		temp = this.head;
+		Node temp = this.head;
 		if (temp != null) {
-			System.out.print("Linked List have: ");
 			while (temp != null) {
-				System.out.print(temp.data + " ");
-				temp = temp.nextNode;
+				System.out.println(temp.data + " ");
+				temp = temp.next;
 			}
-			System.out.println();
 		} else {
 			System.out.println("The list is empty.");
 		}
